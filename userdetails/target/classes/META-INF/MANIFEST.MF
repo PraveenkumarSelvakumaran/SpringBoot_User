@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: userdetails
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Praveenkumar.S
+Implementation-Vendor-Id: com.userdetails
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/userdetails
+Created-By: Maven Integration for Eclipse
+
