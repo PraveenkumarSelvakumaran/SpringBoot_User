@@ -3,8 +3,18 @@
  */
 package com.userdetails.controller;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.userdetails.dao.UserDAO;
+import com.userdetails.dao.UserRepository;
+import com.userdetails.user.User;
 
 /**
  * @author Praveenkumar.S
@@ -15,11 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/")
 public class UserController {
 	
-	private final UserDao userDao;
+	private final UserDAO userDao;
 	
 	private final UserRepository userRepository;
 	
-	public UserController(UserDao userDao, UserRepository userRepository) {
+	public UserController(UserDAO userDao, UserRepository userRepository) {
 		this.userDao = userDao;
 		this.userRepository = userRepository;
 	}
@@ -29,14 +39,14 @@ public class UserController {
 		return userRepository.save(user);
 	}
 	
-	@RequestMapping(value = "", method = Request.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<User> getUsers(){
 		return userRepository.findAll();
 	}
 	
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-	public User getUser(@pathVariable String userId) {
-		return userRepository.findByID(userId);
+	public Optional<User> getUser(@PathVariable String userId) {
+		return userRepository.findById(userId);
 	}
 		
 }
