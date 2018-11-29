@@ -8,7 +8,7 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 
 /**
- * @author Praveenkumar.S
+ * @author PRAVEEN
  *
  */
 public class User {

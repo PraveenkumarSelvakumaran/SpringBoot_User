@@ -17,7 +17,7 @@ import com.userdetails.dao.UserRepository;
 import com.userdetails.user.User;
 
 /**
- * @author Praveenkumar.S
+ * @author PRAVEEN
  *
  */
 
